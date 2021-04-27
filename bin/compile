@@ -30,6 +30,8 @@ echo "Building"
 dune build @install
 echo $BUILD_DIR
 dune install --prefix ~/_build
+echo "Copying priv dir"
+cp -r ./priv ~/_build
 if [[ -e $BUILD_DIR/Procfile ]]; then
     echo "procfile 1"
     cp $BUILD_DIR/Procfile ~/Procfile
